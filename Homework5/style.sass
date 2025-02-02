@@ -1,0 +1,1195 @@
+@import 'vars'
+@import 'mixins'
+*
+    margin: 0
+    padding: 0
+summary
+    display: block
+summary::-webkit-details-marker
+    display: none
+body
+    font-family: 'latoregular'
+a
+    text-decoration: none
+.top
+    overflow: hidden  
+.header
+    border: 1px solid #000
+    background-color: $backBlock
+    padding-top: 20px
+    padding-bottom: 20px
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    align-items: center
+    position: relative
+    svg
+        &:hover
+            path
+                fill: $ColorSelectSite
+
+    &__left
+        @include centerAlign()
+        gap: 41px
+
+    &__right
+        @include centerAlign()
+        gap: 33px
+#check
+    position: absolute
+    left: -999999px
+    visibility: hidden
+
+    &:checked ~ .menu
+        right: 0
+.menu
+    top: 83px
+    z-index: 11
+    right: -$widthBurgerMenu
+    position: absolute
+    width: 232px
+    padding: 32px
+    box-sizing: border-box
+    background: #FFFFFF
+    box-shadow: 6px 4px 35px rgba(0,0,0,0.21)
+    transition: right 0.4s
+    &__ul
+        display: flex
+        flex-direction: column
+        gap: 11px
+        padding-left: 20px
+        list-style-type: none
+    &__heading
+        font-style: normal
+        font-size: 14px
+        font-weight: 700
+        line-height: 17px
+        color: $colorText
+    &__subheading
+        padding-top: 24px
+        padding-bottom: 12px
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        color: $ColorSelectSite
+
+    &__link
+        text-decoration: none
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        color: #6F6E6E
+        @include linkColor()
+
+.center
+    padding-left: calc(50% - $widthSite / 2)
+    padding-right: calc(50% - $widthSite / 2)
+.head_product_center
+    padding-left: calc(50% - $widthSite / 3)
+    gap: 16px
+    @include centerAlignJustify()
+.top__head
+    height: 148px
+    padding-top: 0.4em
+    padding-bottom: 0.4em
+    background: #F8F3F4
+    @include centerAlign()
+    justify-content: space-between
+
+    &_title
+        padding-left: 0em
+        font-style: normal
+        font-weight: 400
+        font-size: 24px
+        line-height: 29px
+        color: $ColorSelectSite
+.breadcrums
+    display: flex
+    flex-direction: row
+    &_link
+        font-style: normal
+        font-size: 14px
+        font-weight: 300
+        line-height: 17px
+        color: #636363
+        @include linkColor()
+
+    &_box:last-of-type &_link
+        font-weight: 700
+        font-size: 14px
+        line-height: 17px
+        color: $ColorSelectSite
+
+    &_box:not(:last-child)::after
+        font-style: normal
+        font-size: 14px
+        font-weight: 300
+        line-height: 17px
+        color: #636363
+        padding-left: 8px
+        padding-right: 8px
+        content: '/'
+.offer
+    padding-top: 63px
+    display: grid
+    grid-template-columns: repeat(3,max(360px))
+    gap: 30px
+    &__box
+        position: relative
+        @include centerAlignJustify()
+        background-size: contain
+        background-repeat: no-repeat
+        border: 1px solid #546747
+        max-height: 260px
+        &_long
+            grid-column: span 3
+            max-height: 180px
+    img
+        background-size: cover
+        background-repeat: no-repeat
+        object-fit: contain
+        width: 100%
+        height: 100%
+    &__text
+        position: absolute
+        font-style: normal
+        font-size: 16px
+        font-weight: 400
+        line-height: 19px
+        text-align: center
+        color: #FFF
+    &__group
+        padding-top: 0.5rem
+        font-style: normal
+        font-size: 24px
+        font-weight: 700
+        line-height: 29px
+        text-align: center
+        color: $ColorSelectSite
+.preview
+    width: 100%
+    background: #F7F7F7
+    padding-top: 11px
+    padding-bottom: 42px
+    @include centerAlign()
+    justify-content: center
+    border-top: 1px solid #EAEAEA
+    border-bottom: 1px solid #EAEAEA
+    box-sizing: border-box
+    &__img
+        display: flex
+        max-height: 765px
+        img
+            object-fit: contain
+            width: 100%
+            height: 100%
+    &__arrow
+        width: 100vw
+        position: absolute
+        display: flex
+        justify-content: space-between
+        &_button
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 47px
+            height: 47px
+            background: #a2a2a23d
+        &:hover
+            path
+                fill: $ColorSelectSite
+.box
+    position: relative
+    display: flex
+    justify-content: center
+    &__left
+        background: #71676914
+        width: 50vw
+        display: flex
+        justify-content: right
+    &__right
+        display: flex
+        align-items: center
+        padding-left: 4rem
+        background-color: #F1E4E6
+        width: 48vw
+.brand
+    display: flex
+    gap: 14rem
+    &__preview
+        max-width: 765px
+        padding-right: 11rem
+        img
+            object-fit: contain
+            width: 100%
+            height: 100%
+    &__head
+        display: flex
+        height: 93px
+        border-left: 12px solid $ColorSelectSite
+        padding-left: 1rem
+    &__link
+        font-style: normal
+        font-weight: 900
+        font-size: 48px
+        line-height: 47px
+        color: $backBlock
+        &_black
+            font-weight: 700
+            font-size: 32px
+            line-height: 37px  
+        &_pink
+            color: $ColorSelectSite
+.filter
+    padding-top: 13px
+    width: 360px
+    position: relative
+    z-index: 10
+    &__content
+        background-color: #fff
+        padding-top: 0px 16px 16px 16px
+
+    &[open]
+        background-color: #FFFFFF
+        box-shadow: 6px 4px 35px 0px #00000036
+
+
+    &[open] &__heading
+        color: $ColorSelectSite
+
+    &[open] path
+        fill: $ColorSelectSite
+
+    &__sort
+        display: flex
+        height: 132px
+        position: relative
+        box-sizing: border-box
+        gap: $gapGrid
+        padding-top: 39px
+
+    &__summary
+        @include centerAlign()
+        gap: 14px
+        padding-left: 1rem
+
+    &__heading
+        font-style: normal
+        font-size: 14px
+        font-weight: 600
+        line-height: 17px
+        color: $colorText
+
+    &__item
+        margin-top: 1rem
+        padding-left: 1rem
+        margin-right: 1rem
+        padding-bottom: 1rem
+    &__item[open] .filter__head
+        color: $ColorSelectSite
+
+    &__head
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        color: #6F6E6E
+        padding: 8px 11px 11px 11px
+        
+        border-bottom: 1px solid #EBEBEB
+        border-left: 5px solid $ColorSelectSite
+    &__link
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        color: #6F6E6E
+        @include linkColor()
+        &_box
+            display: flex
+            flex-direction: column
+            gap: 11px
+            padding: 24px 16px
+.sort
+    padding-top: 12px
+    display: flex
+    gap: 18px
+    &__product
+        display: flex
+        flex-direction: row
+        gap: 1.5rem     
+    &__details
+        position: relative
+    &__summary
+        @include centerAlign()
+        gap: 10px
+        &_product
+            margin-top: 0px
+    &__heading
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        color: #6F6E6E
+
+    &__box
+        display: flex
+        flex-direction: column
+        gap: 8px
+        position: absolute
+        left: -9px
+        top: 22px
+        background-color: #FFF
+        box-shadow: 6px 4px 35px 0px #00000036
+        padding: 7px 30px 11px 9px
+
+    &__check
+        display: flex
+        gap: 9px
+        align-items: center
+        font-family: "Roboto", serif
+        font-size: 14px
+        font-weight: 400
+        line-height: 16px
+        color: #6F6E6E
+.content-product
+    display: flex
+    flex-direction: column
+    gap: 8rem
+.select-product
+    height: 600px
+    background: #FFF
+    border: 1px solid #EAEAEA
+    position: relative
+    margin-top: -4rem
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    &__box
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        width: 642px
+        border-bottom: 1px solid #EAEAEA
+
+    &__sort
+        width: 642px
+        display: flex
+        flex-direction: column
+        gap: 3rem
+        align-items: center
+        padding-top: 4rem
+.collection
+    @include centerAlign()
+    flex-direction: column
+    padding-top: 4rem
+
+    &__heading
+        font-style: initial
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        text-align: center
+        color: $ColorSelectSite
+        
+
+    &__line
+        width: 63px
+        border-bottom: 3px solid $ColorSelectSite
+        align-items: center
+        margin-top: 12px
+        margin-bottom: 12px
+
+    &__name
+        font-style: normal
+        font-size: 18px
+        font-weight: 400
+        line-height: 22px
+        text-align: center
+        color: #5e5e5e
+
+    &__text
+        font-style: normal
+        width: calc(100% - 4.5rem)
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        padding-top: 3rem
+        padding-bottom: 2rem
+        text-align: center
+        color: #5e5e5e
+
+    &__price
+        font-style: normal
+        font-size: 24px
+        font-weight: 400
+        line-height: 29px
+        color: $ColorSelectSite
+        text-align: center
+
+    &__btn
+        @include centerAlign()
+        background: #FFF
+        border: 2px solid $ColorSelectSite
+        width: 212px
+        height: 48px
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 19px
+        color: $ColorSelectSite
+        svg
+            padding-left: 24px
+            padding-right: 23px   
+        &:hover
+            background-color: $ColorHover
+            color: #FFF
+            border: none
+            path
+                fill: #FFF
+.rectangle
+    width: 12px
+    height: 92px
+    background-color: $ColorSelectSite
+.head_link
+    font-style: normal
+    font-weight: 900
+    font-size: 48px
+    line-height: 47px
+    color: $backBlock
+    &_black
+        font-weight: 700
+        font-size: 32px
+        line-height: 37px
+
+    &_pink
+        color: $ColorSelectSite
+.product-head
+    @include centerAlignJustify()
+    padding-top: 97px
+    padding-bottom: 48px
+    &__name
+        text-align: center
+        font-style: normal
+        font-weight: 400
+        font-size: 30px
+        line-height: 36px
+        color: $backBlock
+
+    &__text
+        text-align: center
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        color: #9F9F9F
+.product-box
+    display: grid
+    justify-content: center
+    grid-template-columns: repeat(auto-fit,  360px)
+    gap: 1.7647rem
+    padding-bottom: 3rem
+.product
+    max-width: 360px
+    display: flex
+    flex-direction: column
+    img
+        object-fit: contain
+
+    &__content
+        padding: 24px 16px
+        background-color: #f8f8f8
+        display: flex
+        flex-direction: column
+        gap: 16px
+
+    &__name
+        font-style: normal
+        font-weight: 400
+        font-size: 13px
+        line-height: 16px
+        color: $colorText
+
+    &__price
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 19px
+        color: $ColorSelectSite
+
+    &__text
+        font-style: normal
+        font-weight: 300
+        font-size: 14px
+        line-height: 17px
+        color: #5d5d5d
+.product-button
+    @include centerAlignJustify()
+    padding-bottom: 6rem
+    &__button
+        width: 212px
+        height: 48px
+        background: $ColorSelectSite
+        border: none
+        font-style: normal
+        font-size: 16px
+        font-weight: 400
+        line-height: 19px
+        color: #FFFFFF
+        &:hover
+            background-color: $ColorHover
+.services
+    min-height: 340px
+    background: #222224
+    @include centerAlignJustify()
+    flex-direction: row
+    gap: 30px
+    &__box
+        @include centerAlignJustify()
+        flex-direction: column
+    &__content
+        padding-top: 1.75rem
+    &__name
+        font-style: normal
+        font-size: 20px
+        font-weight: 400
+        line-height: 24px
+        text-align: center
+        color: #FBFBFB
+        padding-bottom: 1rem
+    &__text
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 16px
+        text-align: center
+        color: #FBFBFB    
+.subscribe   
+    display: flex
+    min-height: 448px
+    background: url("img/subscribe.png") left no-repeat
+    background-size: cover
+    gap: $thirdSite
+    @include centerAlignJustify()
+    &__intersect
+        @include centerAlign()
+        flex-direction: column        
+    &__text
+        font-style: normal
+        font-weight: 400
+        font-size: 20px
+        line-height: 24px
+        color: #222224
+        text-align: center
+        margin-top: 30px
+        &_select
+            font-style: italic
+    &__form
+        text-align: center
+                background-color: $ColorHover
+        &_name
+            font-style: normal
+            font-weight: 700
+            font-size: 24px
+            line-height: 40px
+            color: #222224
+        &_text
+            font-style: normal
+            font-weight: 400
+            font-size: 18px
+            line-height: 30px
+            color: #222224
+            margin-bottom: 32px
+
+    &__adress
+        @include centerAlign()
+        flex-direction: row
+        &_form
+            width: 256px
+            height: 49px
+            border-top-left-radius: 10px
+            border-bottom-left-radius: 10px
+            border: none
+            background: #e1e1e1
+            font-style: normal
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            color: #5e5e5f
+            padding-left: 22px
+
+        &_button
+            width: 100px
+            height: 49px
+            border-top-right-radius: 10px
+            border-bottom-right-radius: 10px
+            border: none
+            background: $ColorSelectSite
+            font-style: normal
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+            color: #fff
+            &:hover
+                background-color: $ColorHover
+.footer
+    bottom: 0
+    max-width: $widthSite
+    background-color: $backBlock
+    min-height: 79px
+    @include centerAlign()
+    justify-content: space-between
+
+    &__info
+        display: flex
+        padding-top: 30px
+        padding-bottom: 30px
+    &__copyright
+        font-style: normal
+        font-weight: 400
+        font-size: 16px
+        line-height: 20px
+        color: #fbfbfb
+    &__connection
+        @include centerAlign()
+        flex-direction: row
+        &_box
+            width: 32px
+            height: 32px
+            display: block
+            background: #FFF
+            margin-right: 7px
+            @include centerAlignJustify()
+
+            &:hover
+                background-color: $ColorSelectSite
+                path
+                    fill: #FFF
+.fild
+    padding-top: 6rem
+    padding-bottom: 8rem
+    display: grid
+    justify-content: center
+    grid-template-columns: repeat(2,1fr)
+    gap: 8rem  
+.card
+    display: flex
+    flex-direction: column
+    gap: 40px
+
+    &__purchases
+        display: flex
+        flex-direction: row
+        position: relative
+        gap: 1rem
+        max-width: 652px
+        max-height: 306px
+        background: #FFFFFF
+        box-shadow: 17px 19px 24px 0px #00000021
+
+    &__product
+        display: flex
+        img
+            object-fit: contain
+            width: 100%
+            height: 100%
+    &__content
+        padding-top: 1.375rem
+    &__head
+        font-style: normal
+        font-size: 24px
+        font-weight: 400
+        line-height: 29px
+        text-align: left
+        color: #222
+        padding-bottom: 42px
+
+    &__text
+        span
+            color: $ColorSelectSite
+        font-style: normal
+        font-size: 22px
+        font-weight: 400
+        line-height: 27px
+        color: #575757
+        list-style-type: none
+        display: flex
+        flex-direction: column
+        gap: 6px
+
+        &_quantity
+            display: flex
+            flex-direction: row
+            gap: 25px
+
+        &_count
+            width: 44px
+            height: 25px
+            border: 1px solid #eaeaea
+            font-style: normal
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+            color: #5e5e5f
+            &:focus
+                outline: $ColorSelectSite
+                border-color: $ColorSelectSite
+
+    &__button
+        width: 652px
+        padding-top: 2rem
+        gap: 3rem
+        @include centerAlign()
+        justify-content: center
+
+        &_check
+            width: 235px
+            height: 50px
+            border: 1px solid #a4a4a4
+            background: #FFFFFF
+            font-style: normal
+            font-size: 14px
+            font-weight: 400
+            line-height: 17px
+            text-align: center
+            color: $colorText
+            &:hover
+                background-color: $ColorSelectSite
+                color: #FFF
+                border: none
+
+    &__close
+        z-index: 20
+        position: absolute
+        top: 22px
+        right: 28px
+        &:hover
+            path
+                fill: $ColorSelectSite
+.user-forms
+    display: grid
+    grid-template-columns: repeat(1, 360px)
+    justify-content: center
+    &__adress
+        display: flex
+        flex-direction: column
+        gap: 21px
+
+    &__head
+        font-style: normal
+        font-size: 16px
+        font-weight: 400
+        line-height: 19px
+        color: #222222
+
+    &__text
+        height: 45px
+        border: 1px solid #a4a4a4
+        font-style: normal
+        font-size: 13px
+        font-weight: 400
+        line-height: 16px
+        color: #222222
+        padding-left: 17px
+        &:focus
+            outline: $ColorSelectSite
+            border-color: $ColorSelectSite
+
+    &__get
+        width: 101px
+        height: 35px
+        border: 1px solid #a4a4a4
+        background: #FFFFFF
+        &:hover
+            background-color: $ColorSelectSite
+            color: #FFF
+            border: none
+
+    &__checkout
+        margin-top: -140px
+        display: flex
+        align-items: center
+        flex-direction: column
+        gap: 17px
+        height: 214px
+        background: #F5f3f3
+        &_box
+            padding-top: 39px
+            margin-right: 34px
+            width: 275px
+            border-bottom: 1px solid #e2e2e2
+
+        &_sub
+            padding-bottom: 12px
+            font-style: normal
+            font-size: 11px
+            font-weight: 400
+            line-height: 13px
+            color: #4a4a4a
+            text-align: right
+            span
+                padding-left: 20px
+
+        &_grand
+            padding-bottom: 21px
+            font-style: normal
+            font-size: 16px
+            font-weight: 700
+            line-height: 19px
+            color: #4a4a4a
+            text-align: right
+            span
+                color: $ColorSelectSite
+                padding-left: 20px
+
+        &_check
+            width: 253px
+            height: 50px
+            background: $ColorSelectSite
+            border: none
+            font-style: normal
+            font-size: 16px
+            font-weight: 400
+            line-height: 19px
+            color: #FFFFFF
+            &:hover
+                background-color: $ColorHover
+.registration-form
+    display: flex
+    min-height: 360px
+    justify-content: space-between
+    padding-top: 4rem
+    padding-bottom: 6rem
+    &__box
+        display: flex
+        flex-direction: column
+        max-width: 360px
+        gap: 20px
+        
+    &__head
+        font-style: normal
+        font-size: 16px
+        font-weight: 400
+        line-height: 19px
+        color: $backBlock
+    &__input
+        height: 45px
+        border: 1px solid #a4a4a4
+        padding-left: 17px
+        &:focus
+            outline: $ColorSelectSite
+            border-color: $ColorSelectSite
+    &__gender
+        @include centerAlign()
+        margin-top: 11px
+        margin-bottom: 11px
+        #one:checked ~ #male
+        #two:checked ~ #female
+
+        &_head
+            font-style: normal
+            font-size: 11px
+            font-weight: 400
+            line-height: 13px
+            color: $colorText
+            padding-left: 10px
+            padding-right: 20px   
+    &__text
+        font-style: normal
+        font-size: 13px
+        font-weight: 400
+        line-height: 16px
+        color: #B1B1B1
+    &__button
+        width: 167px
+        height: 50px
+        margin-top: 19px
+        border: none
+        background: $ColorSelectSite
+        font-style: normal
+        font-size: 14px
+        font-weight: 400
+        line-height: 17px
+        color: #fff
+        &_arrow
+            padding-left: 20px
+        &:hover
+            background-color: $ColorHover
+    &__info
+        max-width: 652px
+        &_text
+            font-style: normal
+            font-size: 1.5rem
+            font-weight: 400
+            line-height: 1.5263rem
+            color: $colorText
+            padding-bottom: 21px
+        &_ul
+            list-style: none
+            li:before
+                content: '✔'
+
+        &_li
+            display: flex
+            gap: 23px
+            font-style: normal
+            font-size: 1.5rem
+            font-weight: 400
+            line-height: 1.5263rem
+            color: $colorText
+            padding-bottom: 16px
+
+@media(max-width: 1024px)
+    .header__right
+        padding-right: 2rem
+    .top__head
+        padding-left: 1rem
+        padding-right: 1rem
+    .preview
+        &__img
+            display: block
+            height: 100%
+    .fild
+        padding-top: 3.5rem
+        display: flex
+        flex-wrap: wrap 
+        justify-content: center
+        gap: 4rem
+    .filter
+        &__sort
+            display: flex
+            justify-content: space-between  
+    .box
+        &__right
+            padding-left: 2.5rem
+    .offer
+        display: grid
+        grid-template-columns: repeat(3,  1fr)
+        padding-left: 1rem
+        padding-right: 1rem
+        padding-top: 1rem
+        grid-gap: 1rem
+    .product-head
+        padding-top: 8rem
+    .user-forms
+        display: grid
+        grid-template-columns: repeat(2,360px)
+        gap: 1rem
+        &__checkout
+            margin-top: 39px       
+    .registration-form
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        gap: 1.375rem
+        padding: 4rem 1rem 6rem 1rem
+        &__box
+            width: 360px
+        &__info
+            &_text
+                font-size: 1rem
+                line-height: 1rem
+            &_li
+                font-size: 1rem
+                line-height: 1rem
+    .subscribe
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding-top: 2rem
+        padding-bottom: 8.5rem
+        gap: 4rem
+    .footer
+        padding-left: 2rem
+        padding-right: 2rem
+    @media(max-width: 768px)
+    .services
+        background: #222224
+        @include centerAlignJustify()
+        flex-direction: column
+        gap: 3rem
+        padding-top: 3rem
+        padding-bottom: 4rem
+    .brand
+        &__link
+            font-size: 44px
+            line-height: 52px
+            &_black
+                font-size: 24px
+                line-height: 28px 
+@media(max-width: 480px)
+    .header__right
+        padding-right: 1rem
+        &_registration
+            position: absolute
+            right: -100px
+            visibility: hidden
+        &_shop
+            position: absolute
+            right: -100px
+            visibility: hidden  
+    .top__head
+        display: flex
+        flex-direction: column
+        justify-content: center
+    .menu
+        right: -100vw
+        width: 100vw
+    .filter
+        position: absolute
+        width: 60%
+        margin-left: -20px
+        &__icon
+            width: 35px
+            height: auto
+        &__heading
+            font-size: 0
+        &__sort
+            width: 100vw
+            padding-top: 12px
+            height: 81px
+    .sort
+        position: absolute
+        right: 10px
+        &__product
+            display: flex
+            flex-direction: row
+            gap: 0.5rem     
+        &__heading
+            font-size: 12px
+            line-height: 14px  
+    .registration-form
+        display: flex
+        flex-wrap: wrap
+        padding: 4rem 1rem 6rem 1rem
+        &__info
+            &_text
+                font-size: 16px
+                line-height: 19px
+            &_li
+                font-size: 16px
+                line-height: 19px
+    .product-box
+        display: flex
+        flex-wrap: wrap
+        padding-left: 1rem
+        padding-right: 1rem
+    .offer
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        gap: 2rem
+        &__box
+            width: calc( 100vw - 2rem )
+            &_long
+                height: 110px
+        img
+            object-fit: cover
+        &__group
+            padding: 0
+    .fild
+        padding-top: 3rem
+    .brand
+        &__link
+            font-size: 38px
+            line-height: 46px
+            &_black
+                font-size: 20px
+                line-height: 24px 
+    .box
+        height: 363px
+        &__right
+            position: absolute
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 100vw
+            height: 363px
+    .product
+        width: calc(100vw - 2rem)
+    .services
+        &__name
+            font-size: 17px
+            font-weight: 400
+            line-height: 20px
+        &__text
+            font-size: 12px
+            font-weight: 400
+            line-height: 14px
+    .card
+        width: calc(100vw - 2rem) 
+        gap: 2rem
+        &__purchases
+            display: flex
+            height: 44vw
+            background: #FFFFFF
+            box-shadow: 8px 9px 12px 0px #00000021
+        img
+            object-fit: cover
+        &__content
+            padding-top: 0.5rem
+        &__head
+            font-size: 16px
+            font-weight: 400
+            line-height: 19px
+            padding-bottom: 0.5em
+        &__text
+            font-size: 14px
+            line-height: 17px
+            gap: 3px
+            &_quantity
+                display: flex
+                flex-direction: row
+                gap: 25px
+
+            &_count
+                width: 14%
+                height: auto
+        &__button
+            width: calc(100vw - 2rem) 
+            padding-top: 1rem
+            gap: 1rem
+            @include centerAlign()
+            justify-content: space-between
+
+            &_check
+                width: calc(100vw - 3rem)
+                height: 33px
+                font-size: 10px
+                line-height: 14px
+        &__close
+            z-index: 20
+            position: absolute
+            top: 0.5rem
+            right: 1rem
+            svg
+                width:11px
+    .user-forms
+        display: grid
+        grid-template-columns: repeat(1, calc( 100vw - 0.5rem ))
+        justify-content: center
+        gap: 3rem
+    .subscribe
+        display: flex
+        align-items: center
+        flex-direction: column
+        padding-top: 2rem
+        padding-bottom: 4rem
+        gap: 4rem
+        &__text
+            font-size: 0.9rem
+            line-height: 0.9rem
+        &__adress
+            justify-content: center
+            &_form
+                width: 100%
+            &_button
+                width: 25%
+    .footer
+        display: flex
+        flex-direction: column-reverse
+        padding-top: 3rem
+
