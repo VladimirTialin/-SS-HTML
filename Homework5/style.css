@@ -922,7 +922,7 @@ a {
   border: none;
 }
 .card__close {
-  z-index: 20;
+  z-index: 9;
   position: absolute;
   top: 22px;
   right: 28px;
@@ -1396,7 +1396,6 @@ a {
     line-height: 14px;
   }
   .card__close {
-    z-index: 20;
     position: absolute;
     top: 0.5rem;
     right: 1rem;
