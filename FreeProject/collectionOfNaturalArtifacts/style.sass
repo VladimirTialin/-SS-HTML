@@ -1,0 +1,121 @@
+@import 'vars'
+*
+    margin: 0
+    padding: 0
+a
+     text-decoration: none
+body
+    font-family: 'Open Sans'
+    background: $colorSite
+.center
+    padding-left: calc( 50% -  $widthSite/2)
+    padding-right: calc( 50% -  $widthSite/2)
+.head
+    position: relative
+    display: flex
+    height: 550px
+    background-image: url("img/fond.png")
+    background-size: cover
+    &__bar
+        position: absolute
+        background: $colorSite
+        left: 0
+        width: 100vw
+        height: 60px
+    &__menu
+        position: absolute
+        width: $widthSite
+        height: 60px
+        display: flex
+        align-items: center
+    &__submenu
+        position: absolute
+        right: 0
+        display: flex
+        gap: 4rem
+    &__breadcrumbs
+        display: flex
+        flex-direction: row
+        padding-left: 8rem
+        gap: 4rem
+
+        &_text
+            font-style: normal
+            font-size: 16px
+            font-weight: 400
+            line-height: 24px
+            color: $colorText
+
+.content
+    font-family: 'Cormorant'
+    padding-top: 60px
+    display: flex
+    width: $widthSite
+    display: flex
+    flex-wrap: wrap
+    gap: 1rem
+    &__box
+        position: relative
+        display: flex
+        flex-direction: column
+        width: 255px 
+        border: 1px solid #0B1919
+        &_img
+            display: flex
+            align-items: center
+            justify-content: center
+            padding-top: 30px
+            padding-bottom: 30px
+            width: 100%
+            height: 180px
+            background: $colorContent
+    &__index
+        position: absolute
+        display: flex
+        justify-content: center
+        margin-top: 1rem
+        margin-left: 1rem
+        width: 24px
+        height: 24px
+        border-radius: 50%
+        border: 1px solid $styleContent
+        &_text
+            font-weight: 700
+            font-size: 16px
+            line-height: 20px
+            color: $styleContent
+            
+
+    &__heading
+        display: flex
+        flex-wrap: wrap
+        gap: 1rem
+        padding: 1rem 1rem 1.5rem 1rem
+        &_head
+            font-size: 24px
+            font-weight: 700
+            line-height: 36px
+            color: $colorText
+        &_text
+            font-size: 16px
+            font-weight: 400
+            line-height: 24px
+            color: $styleContent
+    &__button
+        width: 145px
+        height: 45px
+        background: $colorSite
+        border: 1px solid $colorSelect
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+        color: $colorSelect
+        text-align: center
+        
+
+
+
+
+
+
+
