@@ -13,6 +13,7 @@ body
 .head
     position: relative
     display: flex
+    justify-content: space-between
     height: 550px
     background-image: url("img/fond.png")
     background-size: cover
@@ -35,7 +36,6 @@ body
             font-size: 16px
             line-height: 24px
             color: $colorText
-
         &_research
             display: flex
             align-items: center
@@ -46,8 +46,6 @@ body
             font-size: 16px
             line-height: 22px
             color: $colorSelect
-
-
     &__bar
         position: absolute
         background: $colorSite
@@ -70,14 +68,12 @@ body
         flex-direction: row
         padding-left: 8rem
         gap: 4rem
-
         &_text
             font-style: normal
             font-size: 16px
             font-weight: 400
             line-height: 24px
             color: $colorText
-
 .content
     font-family: 'Cormorant'
     padding-top: 60px
@@ -126,8 +122,6 @@ body
             font-size: 24px
             line-height: 36px
             color: $colorText
-                
-
     &__heading
         display: flex
         flex-wrap: wrap
@@ -139,6 +133,7 @@ body
             line-height: 36px
             color: $colorText
         &_text
+            height: 132px
             font-size: 16px
             font-weight: 400
             line-height: 24px
@@ -168,7 +163,6 @@ body
         color: $colorText
 
     &__table
-        
         display: flex
         flex-direction: column
         padding: 1rem
@@ -185,8 +179,6 @@ body
             &_img
                 position: absolute
                 left: 0
-                
-
     &__description
         display: flex
         flex-direction: column
@@ -216,20 +208,47 @@ body
             line-height: 22px
             color: $colorSite
 .table
+    position: relative
+    display: flex
+    &__index
+        position: relative
         display: flex
         justify-content: center
-        margin-top: 1rem
-        margin-left: 1rem
         width: 24px
         height: 24px
         border-radius: 50%
         border: 1px solid $styleContent
+        &_id-1
+            position: absolute
+            margin-top: 130px
+        &_id-2
+            position: absolute
+            margin-left: 160px
+        &_id-3
+            position: absolute
+            margin-left: 130px
+            margin-top: 40px
+        &_id-4
+            position: absolute
+            margin-left: -70px  
+            margin-top: 180px
+        &_id-5
+            position: absolute
+            bottom: 0
+            margin-left: 120px
+        &_id-6
+            position: absolute
+            margin-left: 140px
+        &_id-7
+            position: absolute
+            bottom: 0
+            margin-left: 50px
         &_text
+            font-family: 'Cormorant'
             font-weight: 700
             font-size: 16px
             line-height: 20px
-            color: $styleContent
-    
+            color: $styleContent   
 .footer
     display: flex
     flex-direction: column
@@ -272,7 +291,6 @@ body
             font-size: 16px
             line-height: 22px
             color: $colorContent
-
     &__contacts
         display: flex
         flex-direction: row
@@ -291,10 +309,6 @@ body
             font-size: 12px
             line-height: 16px
             color: $styleContent
-
-
-        
-
 
 
 

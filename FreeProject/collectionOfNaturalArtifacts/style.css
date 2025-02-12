@@ -20,6 +20,7 @@ body {
 .head {
   position: relative;
   display: flex;
+  justify-content: space-between;
   height: 550px;
   background-image: url("img/fond.png");
   background-size: cover;
@@ -159,6 +160,7 @@ body {
   color: #FFF;
 }
 .content__heading_text {
+  height: 132px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -246,16 +248,52 @@ body {
 }
 
 .table {
+  position: relative;
+  display: flex;
+}
+.table__index {
+  position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
-  margin-left: 1rem;
   width: 24px;
   height: 24px;
   border-radius: 50%;
   border: 1px solid #899D9D;
 }
-.table_text {
+.table__index_id-1 {
+  position: absolute;
+  margin-top: 130px;
+}
+.table__index_id-2 {
+  position: absolute;
+  margin-left: 160px;
+}
+.table__index_id-3 {
+  position: absolute;
+  margin-left: 130px;
+  margin-top: 40px;
+}
+.table__index_id-4 {
+  position: absolute;
+  margin-left: -70px;
+  margin-top: 180px;
+}
+.table__index_id-5 {
+  position: absolute;
+  bottom: 0;
+  margin-left: 120px;
+}
+.table__index_id-6 {
+  position: absolute;
+  margin-left: 140px;
+}
+.table__index_id-7 {
+  position: absolute;
+  bottom: 0;
+  margin-left: 50px;
+}
+.table__index_text {
+  font-family: "Cormorant";
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
